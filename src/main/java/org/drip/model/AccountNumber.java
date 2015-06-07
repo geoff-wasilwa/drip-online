@@ -20,7 +20,7 @@ public class AccountNumber {
 	private String accountNumber;
 	
 	@ManyToOne
-	private DripUser dripUser;
+	private Customer dripUser;
 	
 	public int getId() {
 		return id;
@@ -38,11 +38,11 @@ public class AccountNumber {
 		this.accountNumber = accountNumber;
 	}
 	
-	public DripUser getDripUser() {
+	public Customer getDripUser() {
 		return dripUser;
 	}
 	
-	public void setDripUser(DripUser dripUser) {
+	public void setDripUser(Customer dripUser) {
 		this.dripUser = dripUser;
 	}
 }
