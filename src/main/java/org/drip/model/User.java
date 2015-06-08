@@ -34,7 +34,8 @@ public class User {
 	@JoinColumn(name="user_id")
 	private List<ResetHash> resetHash;
 	
-	@OneToOne(mappedBy="user")
+	@OneToOne
+	@JoinColumn(name="customer_id")
 	private Customer customer;
 	
 	public User() {	
@@ -54,11 +55,11 @@ public class User {
     	this.id = id;
     }
 	
-    public String getEmail() {
+    public String getUsername() {
     	return username;
     }
 	
-    public void setEmail(String email) {
+    public void setUsername(String email) {
     	this.username = email;
     }
 	

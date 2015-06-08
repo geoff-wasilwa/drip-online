@@ -6,7 +6,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -39,14 +38,16 @@ public class Customer {
 	@Column(name = "zip_code")
 	private String zipCode;
 	
-	@OneToMany(cascade = { CascadeType.ALL })
-	@JoinColumn(name = "drip_user_id")
+	@OneToMany(cascade = { CascadeType.ALL }, mappedBy = "customer")
 	private List<AccountNumber> accountNumbers;
 	
 	private Boolean registered;
 	
-	@OneToOne
+	@OneToOne(mappedBy = "customer")
 	private User user;
+	
+	public Customer() {
+	}
 	
 	public Customer(Customer customer) {
 	    this.accountNumbers = customer.getAccountNumbers();

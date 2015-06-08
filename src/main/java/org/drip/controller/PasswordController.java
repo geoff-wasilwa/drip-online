@@ -68,7 +68,7 @@ public class PasswordController {
 		//Boolean isAuthenticated = !(SecurityContextHolder.getContext().getAuthentication() instanceof AnonymousAuthenticationToken);
 		User user = passwordService.getUserAssociatedWithHash(hash);
 		if (user != null) {
-			model.addAttribute("username", user.getEmail());
+			model.addAttribute("username", user.getUsername());
 			return "reset_forgot";
 		} else {
 			return "redirect:/index";
