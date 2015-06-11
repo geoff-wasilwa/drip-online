@@ -26,6 +26,7 @@ public class ResetHash {
 	@Column(unique=true)
 	private String hash;
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "expire_date")
 	private Date expireDate;
 	@ManyToOne
 	@JoinColumn(name="user_id")
